@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Change Password
+{% endblock %}
+
+{% block main %}
+<h1 class="text-center">Change Password</h1>
+<form action="/changepass" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="current" name="current"
+            placeholder="Current Password" type="password">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="new" name="new" placeholder="New Password" type="password">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="retype" name="retype" placeholder="Re-type Password"
+            type="password">
+    </div>
+    <button class="btn btn-primary" type="submit">Change Password</button>
+</form>
+<br>
+<br>
+<form action="/deleteacc" class="text-center">
+    <button class="btn btn-danger" type="submit" id=> Delete Account </button>
+</form>
+
+{{status}}
+{% endblock %}

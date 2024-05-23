@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Results</h1>
+    <div>
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Symbol</th>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{results['name']}}</td>
+                        <td>{{results['price']|usd}}</td>
+                        <td>{{results['symbol']}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

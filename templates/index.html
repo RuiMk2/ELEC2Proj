@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Index</h1>
+    <p>{{user["username"]}}</p>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Stocks</th>
+                    <th>Shares</th>
+                    <th>Current Price</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in owned %}
+                <tr>
+                    <td>{{data["CompanyStocks"]}}</td>
+                    <td>{{data["Symbol"]}}</td>
+                    <td>{{data["TotalShares"]}}</td>
+                    <td>{{data["price"]|usd}}</td>
+                    <td>{{data["TotalValue"]|usd}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>Current Balance: {{user["cash"]|usd}}</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Total: {{total|usd}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
